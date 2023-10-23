@@ -1,9 +1,9 @@
 import { Entity } from "@shared/domain/entity";
 import { ProdutoMap } from "../../infra/mappers/produto.map";
 import { Categoria } from "../categoria/categoria.entity";
+import { RecuperarCategoriaProps } from "../categoria/categoria.types";
 import { ProdutoExceptions } from "./produto.exception";
 import { CriarProdutoProps, IProduto, RecuperarProdutoProps, StatusProduto } from "./produto.types";
-import { RecuperarCategoriaProps } from "../categoria/categoria.types";
 
 class Produto extends Entity<IProduto> implements IProduto {
 
@@ -15,23 +15,23 @@ class Produto extends Entity<IProduto> implements IProduto {
     private _descricao: string;
     private _valor: number;
     private _categorias: Array<Categoria>;
-    private _dataCriacao?: Date | undefined; 
-	private _dataAtualizacao?: Date | undefined; 
-	private _dataExclusao?: Date | null | undefined;
+    private _dataCriacao?: Date | undefined;
+    private _dataAtualizacao?: Date | undefined;
+    private _dataExclusao?: Date | null | undefined;
     private _status?: StatusProduto | undefined;
-    
+
     //////////////
-	//Constantes//
-	//////////////
+    //Constantes//
+    //////////////
 
     public static readonly TAMANHO_MINIMO_NOME = 5;
     public static readonly TAMANHO_MAXIMO_NOME = 50;
     public static readonly TAMANHO_MINIMO_DESCRICAO = 10;
     public static readonly TAMANHO_MAXIMO_DESCRICAO = 200;
     public static readonly VALOR_MINIMO = 0;
-    public static readonly QTD_MINIMA_CATEGORIAS = 1; 
+    public static readonly QTD_MINIMA_CATEGORIAS = 1;
     public static readonly QTD_MAXIMA_CATEGORIAS = 3;
-    
+
     ///////////////
     //Gets e Sets//
     ///////////////
@@ -42,7 +42,7 @@ class Produto extends Entity<IProduto> implements IProduto {
 
     private set nome(nome: string) {
         const tamanhoNome = nome.trim().length
-        
+
         if (tamanhoNome < Produto.TAMANHO_MINIMO_NOME) {
             throw new ProdutoExceptions.NomeProdutoTamanhoMinimoInvalido();
         }
@@ -53,7 +53,7 @@ class Produto extends Entity<IProduto> implements IProduto {
 
         this._nome = nome;
     }
-    
+
     public get descricao(): string {
         return this._descricao;
     }
@@ -92,11 +92,11 @@ class Produto extends Entity<IProduto> implements IProduto {
     private set categorias(categorias: Array<Categoria>) {
         const qtdCategorias = categorias.length
 
-        if (qtdCategorias < Produto.QTD_MINIMA_CATEGORIAS){
+        if (qtdCategorias < Produto.QTD_MINIMA_CATEGORIAS) {
             throw new ProdutoExceptions.QtdMinimaCategoriasProdutoInvalida();
         }
 
-        if (qtdCategorias > Produto.QTD_MAXIMA_CATEGORIAS){
+        if (qtdCategorias > Produto.QTD_MAXIMA_CATEGORIAS) {
             throw new ProdutoExceptions.QtdMaximaCategoriasProdutoInvalida();
         }
 
@@ -134,20 +134,20 @@ class Produto extends Entity<IProduto> implements IProduto {
     private set status(value: StatusProduto | undefined) {
         this._status = value;
     }
-    
+
     //////////////
     //Construtor//
     //////////////
 
-    private constructor(produto:IProduto){
+    private constructor(produto: IProduto) {
         super(produto.id);
         this.nome = produto.nome;
         this.descricao = produto.descricao;
         this.valor = produto.valor;
-        this.categorias = produto.categorias.map((categoria => { return Categoria.recuperar(categoria as RecuperarCategoriaProps)}));
+        this.categorias = produto.categorias.map((categoria => { return Categoria.recuperar(categoria as RecuperarCategoriaProps) }));
         this.dataCriacao = produto.dataCriacao;
-		this.dataAtualizacao = produto.dataAtualizacao;
-		this.dataExclusao = produto.dataExclusao;
+        this.dataAtualizacao = produto.dataAtualizacao;
+        this.dataExclusao = produto.dataExclusao;
         this.status = produto.status;
     }
 
@@ -190,7 +190,7 @@ class Produto extends Entity<IProduto> implements IProduto {
     }
 
     public adicionarCategoria(categoria: Categoria): Categoria {
-        if (this.quantidadeCategorias() >= Produto.QTD_MAXIMA_CATEGORIAS){
+        if (this.quantidadeCategorias() >= Produto.QTD_MAXIMA_CATEGORIAS) {
             throw new ProdutoExceptions.ProdutoJaPossuiQtdMaximaCategorias();
         }
 

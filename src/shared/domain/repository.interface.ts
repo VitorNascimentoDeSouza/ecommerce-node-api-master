@@ -10,6 +10,6 @@ interface ICommand<T> {
     deletar(uuid: string): Promise<boolean>;
 }
 
-interface IRepository<T> extends IQuery<T>, ICommand<T> {}; 
+interface IRepository<T> extends IQuery<T>, ICommand<T> { };
 
-export { IRepository }
+export { IRepository };

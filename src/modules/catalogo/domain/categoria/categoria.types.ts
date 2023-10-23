@@ -4,7 +4,7 @@ import { IDatasControle, KeysDatasControle } from "@shared/domain/datas.types";
 //Auxilia na criação de invariantes e modelos ricos
 interface ICategoria extends IDatasControle {
     id?: string;
-    nome:string;
+    nome: string;
 }
 
 //Atributos que são necessários para criar uma categoria
@@ -17,7 +17,5 @@ type RecuperarCategoriaProps = ICategoria & {
 }
 
 export {
-    ICategoria , 
-    CriarCategoriaProps,
-    RecuperarCategoriaProps
-}
+    CriarCategoriaProps, ICategoria, RecuperarCategoriaProps
+};

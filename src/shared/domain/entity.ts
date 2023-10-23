@@ -12,7 +12,7 @@ abstract class Entity<T> {
     //Atributos//
     /////////////
 
-	private _id: string;
+    private _id: string;
 
     ///////////////
     //Gets e Sets//
@@ -24,7 +24,7 @@ abstract class Entity<T> {
 
     private set id(value: string) {
 
-        if (!Entity.validUUID(value)){
+        if (!Entity.validUUID(value)) {
             throw new IDEntityUUIDInvalid();
         }
 
@@ -45,25 +45,25 @@ abstract class Entity<T> {
 
     public equals(object?: Entity<T>): boolean {
         if (object == null || object == undefined) {
-          return false
+            return false
         }
-    
+
         if (this === object) {
-          return true
+            return true
         }
-    
+
         if (!isEntity(object)) {
-          return false
+            return false
         }
-    
+
         return this._id == object._id
     }
 
     public static validUUID(UUID: string): boolean {
         let padraoUUID: RegExp = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
         return padraoUUID.test(UUID);
-    } 
+    }
 
 }
 
-export { Entity }
+export { Entity };

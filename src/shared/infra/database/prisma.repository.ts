@@ -4,10 +4,10 @@ abstract class PrismaRepository {
 
     protected _datasource: PrismaClient;
 
-    constructor(prisma: PrismaClient){
+    constructor(prisma: PrismaClient) {
         this._datasource = prisma;
     }
 
 }
 
-export { PrismaRepository }
+export { PrismaRepository };

@@ -6,4 +6,4 @@ interface IDatasControle {
 
 type KeysDatasControle = keyof IDatasControle;
 
-export { IDatasControle, KeysDatasControle }
+export { IDatasControle, KeysDatasControle };
