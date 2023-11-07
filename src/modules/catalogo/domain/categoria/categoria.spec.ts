@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { IDEntityUUIDInvalid } from '@shared/domain/domain.exception';
 import { beforeAll, describe, expect, test } from 'vitest';
 import { Categoria } from './categoria.entity';
-import { NomeCategoriaTamanhoMaximoInvalido, NomeCategoriaTamanhoMinimoInvalido } from './categoria.exception';
+import { CategoriaExcecao } from './categoria.exception';
 import { CriarCategoriaProps, RecuperarCategoriaProps } from './categoria.types';
 
 let nomeCategoriaValido: string;
@@ -52,7 +52,7 @@ describe('Entidade de Dominio: Categoria', () => {
 
             //Quando (When) e Então (Then)
             expect(() => Categoria.criar(categoriaNomeInvalido))
-                .toThrowError(NomeCategoriaTamanhoMinimoInvalido);
+                .toThrowError(CategoriaExcecao.NomeCategoriaTamanhoMinimoInvalido);
 
         });
 
@@ -66,7 +66,7 @@ describe('Entidade de Dominio: Categoria', () => {
 
             //Quando (When) e Então (Then)
             expect(() => Categoria.criar(categoriaNomeInvalido))
-                .toThrowError(NomeCategoriaTamanhoMaximoInvalido);
+                .toThrowError(CategoriaExcecao.NomeCategoriaTamanhoMaximoInvalido);
 
         });
 
@@ -114,7 +114,7 @@ describe('Entidade de Dominio: Categoria', () => {
 
             //Quando (When) e Então (Then)
             expect(() => Categoria.recuperar(categoriaNomeInvalido))
-                .toThrowError(NomeCategoriaTamanhoMinimoInvalido);
+                .toThrowError(CategoriaExcecao.NomeCategoriaTamanhoMinimoInvalido);
 
         });
 
@@ -129,7 +129,7 @@ describe('Entidade de Dominio: Categoria', () => {
 
             //Quando (When) e Então (Then)
             expect(() => Categoria.recuperar(categoriaNomeInvalido))
-                .toThrowError(NomeCategoriaTamanhoMaximoInvalido);
+                .toThrowError(CategoriaExcecao.NomeCategoriaTamanhoMaximoInvalido);
 
         });
 

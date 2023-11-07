@@ -1,7 +1,7 @@
 interface IQuery<T> {
-    recuperarPorUuid(uuid: string): Promise<T | null>;
+    recuperarPorUuid(uuid: String): Promise<T | null>;
     recuperarTodos(): Promise<Array<T>>;
-    existe(uuid: string): Promise<boolean>;
+    existe(uuid: String): Promise<boolean>;
 }
 
 interface ICommand<T> {
