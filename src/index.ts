@@ -7,8 +7,9 @@ import { prisma } from '@main/infra/database/orm/prisma/client';
 import { categoriaRepositorio } from '@modules/catalogo/infra/database';
 import { produtoRepositorio } from '@modules/catalogo/infra/database';
 import { Produto } from '@modules/catalogo/domain/produto/produto.entity';
-import { recuperarCategoriaPorIdUseCase, recuperarTodasCategorias } from '@modules/catalogo/application/use-case';
+import { atualizarCategoriaUseCase, deletarCategoriaUseCase, inserirCategoriaUseCase, recuperarCategoriaPorIdUseCase, recuperarProdutoPorIdUseCase, recuperarTodasCategoriasUseCase } from '@modules/catalogo/application/use-case';
 import { RecuperarTodasCategoriasUseCase } from '@modules/catalogo/application/use-case/recuperar-todas-categorias/recuperar-todas-categorias.use-case';
+import { InserirCategoriaUseCase } from '@modules/catalogo/application/use-case/inserir-categoria/inserir-categoria.use-case';
 
 async function main() {
 
@@ -19,8 +20,12 @@ async function main() {
     );
     
 
+    //////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////Categoria////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////
 
 
+    
     ////////////////////////////////
     //Recuperar Categoria por UUID//
     ////////////////////////////////
@@ -33,7 +38,8 @@ async function main() {
     //Recuperar Todas as Categorias//
     /////////////////////////////////
 
-    console.log(await recuperarTodasCategorias.execute())
+    //console.log(await recuperarTodasCategoriasUseCase.execute())
+
 
 
     ////////////////////////////////
@@ -50,13 +56,7 @@ async function main() {
     //Inserir Categoria//
     /////////////////////
 
-    //const categoria: Categoria = Categoria.criar({
-    //    nome:'Cozinha'
-    //});     
-
-    //const categoriaInserida = await categoriaRepositorio.inserir(categoria);
-
-    //console.log(categoriaInserida);
+    //console.log(await inserirCategoriaUseCase.execute({nome: 'cama'}))
 
 
 
@@ -64,14 +64,10 @@ async function main() {
     //Atualizar Categoria//
     ///////////////////////
 
-    //const categoria: Categoria = Categoria.recuperar({
-    //    id: "5ccdd6ab-d043-42f0-937b-1260fe47886a",
-    //    nome: "Cozinha Americana"
-    //});     
-
-    //const atualizouCategoria: boolean = await categoriaRepositorio.atualizar(categoria.id,categoria);
-
-    //console.log(atualizouCategoria)
+    //console.log(await atualizarCategoriaUseCase.execute({
+    //id:"57c710fe-e413-42c3-9a58-f5e29e0c7240",
+    //nome: "banho"
+    //}))
 
 
 
@@ -79,28 +75,24 @@ async function main() {
     //Deletar Categoria//
     /////////////////////
 
-    //const categoriaDeletada: boolean = await categoriaRepositorio.deletar('5ccdd6ab-d043-42f0-937b-1260fe47886a');
-
-    //console.log(categoriaDeletada);
+    //console.log(await deletarCategoriaUseCase.execute('db434425-5c4a-4e0d-b5fa-fc45445d1298'))
 
 
+    //////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////Produto////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////
     //Recuperar Produto por UUID//
     ////////////////////////////////
 
-    //const produtoRecuperado: Produto | null = await produtoRepositorio.recuperarPorUuid("7f35c7f4-ce26-4503-bfce-0afd937adfb8");
+    //console.log(await recuperarProdutoPorIdUseCase.execute(""));
 
-    //console.log(produtoRecuperado);
-
-    //console.log(produtoRecuperado?.estaDeletado());
-
-
+   
 
     ///////////////////
     //Inserir Produto//
     ///////////////////
-
 
     //const categoria01: Categoria = Categoria.recuperar({
     //    id: "03f890b0-684a-44ba-a887-170e26bb2cd2",
@@ -133,10 +125,11 @@ async function main() {
 
     //console.log(todosProdutos);
 
+
+
     ///////////////////////////////////////////////
     //Atualizar Produto - Sem Atulizar Categorias//
     ///////////////////////////////////////////////
-
 
     //const produto = {
     //    id: "7d6a14d5-02f3-4b6d-8cb8-8601ff151f10",
@@ -201,6 +194,7 @@ async function main() {
     //const todosProdutosPorCategoria: Array<Produto> = await produtoRepositorio.recuperarPorCategoria("03f890b0-684a-44ba-a887-170e26bb2cd2");
 
     //console.log(todosProdutosPorCategoria);
+
 
 
 }

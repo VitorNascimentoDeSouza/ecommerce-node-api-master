@@ -1,13 +1,13 @@
 interface IQuery<T> {
     recuperarPorUuid(uuid: String): Promise<T | null>;
     recuperarTodos(): Promise<Array<T>>;
-    existe(uuid: String): Promise<boolean>;
+    existe(uuid: string): Promise<boolean>;
 }
 
 interface ICommand<T> {
     inserir(entity: T): Promise<T>;
     atualizar(uuid: string, entity: Partial<T>): Promise<boolean>;
-    deletar(uuid: string): Promise<boolean>;
+    deletar(uuid: String): Promise<boolean>;
 }
 
 interface IRepository<T> extends IQuery<T>, ICommand<T> { };
