@@ -12,7 +12,7 @@ class RecuperarCategoriaPorIdUseCase implements IUseCase<String, ICategoria> {
         this._categoriaRepositorio = repositorio
     }
 
-    async execute(uuid: String): Promise<ICategoria> {
+    async execute(uuid: string): Promise<ICategoria> {
 
         const existeCategoria: boolean = await this._categoriaRepositorio.existe(uuid)
 
