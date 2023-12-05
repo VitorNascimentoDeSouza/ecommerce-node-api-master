@@ -15,8 +15,8 @@ class RecuperarCategoriaPorIdExpressController extends ExpressController {
     async recuperar(request: Request, response: Response, next: NextFunction) {
       try {
         const uuid:string = request.params.id;
-        const categoriaDTO: ICategoria = await this._recuperarCategoriaPorIdUseCase.execute(uuid);
-        this.sendSuccessResponse(response,categoriaDTO);
+        const categoriaOutputDTO: ICategoria = await this._recuperarCategoriaPorIdUseCase.execute(uuid);
+        this.sendSuccessResponse(response,categoriaOutputDTO);
       } catch (error) {
         next(error);
       }

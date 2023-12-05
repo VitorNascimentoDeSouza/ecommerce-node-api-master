@@ -1,28 +1,33 @@
-import dotenv from 'dotenv'
-import { createHTTPServe } from './presentation/http/server'
+import dotenv from 'dotenv';
+import { createHTTPServe } from './presentation/http/server';
+import { prisma } from '@main/infra/database/orm/prisma/client';
 
 async function bootstrap() {
-    
-    //Carrega variaveis de ambiente do arquivo .env
-    dotenv.config()
 
-    //Atribuir as variaveis de ambiente a constantes locais
-    const api_name = process.env.API_NAME
-    const host_name = process.env.HOST_NAME
-    const port = process.env.PORT
+    //Carrega variáveis de ambiente do arquivo .env
+	dotenv.config();
 
-    console.log(`[${api_name}] inicializando a API......`)
+    const api_name = process.env.API_NAME;
+    const host_name = process.env.HOST_NAME;
+    const port = process.env.PORT;
 
-    const httpServer = await createHTTPServe()
+    console.log(`[${api_name}] 🚀 Inicializando a API....`);
 
-    httpServer.listen( {port: port} , async () => {
-        console.log(`[${api_name}] Servidor HTTP pronto e ouvindo em http://${host_name}:${port}`)
-    }
+    const httpServer = await createHTTPServe();
 
-    )
+    httpServer.listen({ port: port }, async () => {
+        console.log(`[${api_name}] ✅ Servidor HTTP pronto e ouvindo em http://${host_name}:${port}`);
+    });
+
+    prisma.$connect().then(
+        async () => {
+            console.log(`[${api_name}] ✅ Banco de dados conectado`);
+        }
+    );
+
 }
 
 bootstrap()
     .catch((error) => {
-        console.error(error)
-    })
+        console.error(error);
+    });
