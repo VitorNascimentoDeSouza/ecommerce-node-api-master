@@ -17,12 +17,12 @@ Content-type: application/json
 }
 
 ### Atualizar Categoria
-PUT http://{{host}}:{{port}}/{{apiversion}}/categorias/ac6c99e0-0759-47c1-89cb-5c6dc6e64852
+PUT http://{{host}}:{{port}}/{{apiversion}}/categorias/78d16300-7020-4c7a-9afd-78b5fce05ec0
 Content-type: application/json 
 
 {
-    "id": "ac6c99e0-0759-47c1-89cb-5c6dc6e64852",
-    "nome":"Sala de Estar"
+    "id": "78d16300-7020-4c7a-9afd-78b5fce05ec0",
+    "nome":"Itens para sacada"
 }
 
 ### Deletar Categoria
