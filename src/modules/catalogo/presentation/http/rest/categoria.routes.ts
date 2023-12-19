@@ -34,4 +34,4 @@ categoriaRouter.delete(
     (request, response, next) =>  deletarCategoriaController.deletar(request, response, next)
 )
 
-export { categoriaRouter };
+export { categoriaRouter};

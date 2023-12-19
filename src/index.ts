@@ -95,7 +95,7 @@ async function main() {
     ///////////////////
 
     //const categoria01: Categoria = Categoria.recuperar({
-    //    id: "03f890b0-684a-44ba-a887-170e26bb2cd2",
+    //    id: "31244dc7-7f49-43be-a89b-bb6081077fc1",
     //    nome: 'Cozinha'
     //});     
 
