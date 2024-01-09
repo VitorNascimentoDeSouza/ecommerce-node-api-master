@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="9aFSi8XyiYPv80Z2Mk90" name="Visão Geral - Domínio">
-        <mxGraphModel dx="1324" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1039" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -81,7 +81,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="716YB2Dg7-pcS5Y_QKZl" name="Subdomínio - Catálogo">
-        <mxGraphModel dx="2174" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1889" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -284,6 +284,69 @@
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="235.01" y="640.5" as="sourcePoint"/>
                         <mxPoint x="199.99750000000017" y="459" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Copy of Subdomínio - Catálogo" id="SRsDPOySqU-mHWaLkJT_">
+        <mxGraphModel dx="1385" dy="1732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-0"/>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-1" parent="y6HtTmZWH1tDw1FQGuoX-0"/>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-2" value="Subdomínio - Usuario" style="shape=umlFrame;whiteSpace=wrap;html=1;width=160;height=20;boundedLbl=1;verticalAlign=middle;align=left;spacingLeft=5;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-1">
+                    <mxGeometry x="80" y="-50" width="870" height="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-3" value="Usuario" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-1">
+                    <mxGeometry x="20" y="115" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-6" value="Gerenciar Usuario" style="shape=ellipse;container=1;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;html=1;dashed=0;collapsible=0;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-1">
+                    <mxGeometry x="157.5" y="120" width="162.5" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-8" value="Registrar Usuario" style="shape=ellipse;container=1;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;html=1;dashed=0;collapsible=0;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-1">
+                    <mxGeometry x="400" y="50" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-10" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0.845;entryY=0.152;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="y6HtTmZWH1tDw1FQGuoX-1" source="y6HtTmZWH1tDw1FQGuoX-8" target="y6HtTmZWH1tDw1FQGuoX-6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="360" y="78" as="sourcePoint"/>
+                        <mxPoint x="520" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-11" value="" style="shape=ellipse;container=1;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;html=1;dashed=0;collapsible=0;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-1">
+                    <mxGeometry x="420" y="120" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-12" value="Recuperar Usuario" style="html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rotatable=0;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-11">
+                    <mxGeometry y="19.071428571428573" width="120" height="12.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-13" value="" style="shape=ellipse;container=1;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;html=1;dashed=0;collapsible=0;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-1">
+                    <mxGeometry x="390" y="190" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-14" value="Autenticar Usuario" style="html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rotatable=0;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-13">
+                    <mxGeometry y="19.071428571428573" width="120" height="12.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-17" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="y6HtTmZWH1tDw1FQGuoX-1" source="y6HtTmZWH1tDw1FQGuoX-12">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="370" y="88.44642857142856" as="sourcePoint"/>
+                        <mxPoint x="320" y="145.32142857142856" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-18" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.952;entryY=0.749;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="y6HtTmZWH1tDw1FQGuoX-1" source="y6HtTmZWH1tDw1FQGuoX-14" target="y6HtTmZWH1tDw1FQGuoX-6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="370" y="145.32142857142856" as="sourcePoint"/>
+                        <mxPoint x="330" y="155.32142857142856" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-20" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="y6HtTmZWH1tDw1FQGuoX-1" target="y6HtTmZWH1tDw1FQGuoX-3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="157.5" y="145.32142857142856" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-21" value="Recuperar Usuario por Email" style="shape=ellipse;container=1;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;html=1;dashed=0;collapsible=0;" vertex="1" parent="y6HtTmZWH1tDw1FQGuoX-1">
+                    <mxGeometry x="590" y="110" width="190" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="y6HtTmZWH1tDw1FQGuoX-25" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="y6HtTmZWH1tDw1FQGuoX-1" source="y6HtTmZWH1tDw1FQGuoX-21" target="y6HtTmZWH1tDw1FQGuoX-12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="541" y="82.19642857142856" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
