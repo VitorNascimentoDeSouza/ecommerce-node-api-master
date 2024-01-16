@@ -7,9 +7,10 @@ import { prisma } from '@main/infra/database/orm/prisma/client';
 import { categoriaRepositorio } from '@modules/catalogo/infra/database';
 import { produtoRepositorio } from '@modules/catalogo/infra/database';
 import { Produto } from '@modules/catalogo/domain/produto/produto.entity';
-import { atualizarCategoriaUseCase, deletarCategoriaUseCase, inserirCategoriaUseCase, recuperarCategoriaPorIdUseCase, recuperarProdutoPorIdUseCase, recuperarTodasCategoriasUseCase } from '@modules/catalogo/application/use-case';
+import { atualizarCategoriaUseCase, deletarCategoriaUseCase, inserirCategoriaUseCase, recuperarCategoriaPorIdUseCase, recuperarTodasCategoriasUseCase } from '@modules/catalogo/application/use-case';
 import { RecuperarTodasCategoriasUseCase } from '@modules/catalogo/application/use-case/recuperar-todas-categorias/recuperar-todas-categorias.use-case';
 import { InserirCategoriaUseCase } from '@modules/catalogo/application/use-case/inserir-categoria/inserir-categoria.use-case';
+import { RecuperarProdutoPorIdUseCase } from '@modules/catalogo/application/use-case/recuperar-produto-por-id/recuperar-produto-por-id.use-case';
 
 async function main() {
 

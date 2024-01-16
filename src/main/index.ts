@@ -1,10 +1,10 @@
-import dotenv from 'dotenv';
-import { createHTTPServer } from './presentation/http/server';
 import { prisma } from '@main/infra/database/orm/prisma/client';
 import { logger } from '@shared/helpers/logger.winston';
+import dotenv from 'dotenv';
 import { Application } from 'express';
 import { createExpressApplication } from './presentation/http/app.express';
-import { error } from 'console';
+import { createHTTPServer } from './presentation/http/server';
+import { createSPAExpressApplication } from './presentation/http/spa.express';
 
 
 async function bootstrap() {
@@ -26,6 +26,14 @@ async function bootstrap() {
 
     httpServer.listen({ port: port }, async () => {
         logger.ok(`Servidor HTTP Pronto e Ouvindo em http://${host_name}:${port}`);
+    });
+
+    const spa: Application = await createSPAExpressApplication();
+    logger.ok(`SPA - Aplicação Express Instanciada e Configurada`);
+    const httpServerSPA = await createHTTPServer(spa);
+    logger.ok('SPA - Servidor HTTP para  Instanciado e Configurado');
+    httpServerSPA.listen({ port: 5400 }, async () => {
+    logger.ok(`SPA - Servidor HTTP Pronto e Ouvindo em http://${host_name}:5400`);
     });
 
     prisma.$connect().then(
